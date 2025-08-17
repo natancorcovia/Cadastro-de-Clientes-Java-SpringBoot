@@ -26,11 +26,11 @@ public class UserController {
     public ResponseEntity<Void> saveUser(@RequestBody User user){
         userService.saveUser(user);
         return ResponseEntity.ok().build();
-    }
+}
 
     @GetMapping
     public ResponseEntity<User> getUserByEmail(@RequestParam String email){
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(userService.getUserByEmail(email));
     }
 
     @DeleteMapping
